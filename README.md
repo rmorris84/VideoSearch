@@ -5,7 +5,7 @@
 Calls YouTube videos via API. Has a search function that updates the DOM with new information as you're searching.
 
 ```
-> git clone https://github.com/rmorris84/ReduxSimpleStarter.git
+> git clone https://github.com/rmorris84/VideoSearch.git
 > cd VideoSearch
 > npm install
 > npm start
