@@ -18,7 +18,8 @@ class App extends Component {
 
     this.state = { 
       videos: [], 
-      selectedVideo: null
+      selectedVideo: null,
+      play: false
     };
     //Default search string when app loads
     this.videoSearch('react.js');
@@ -27,6 +28,7 @@ class App extends Component {
   videoSearch(term){
     YTSearch({key: API_KEY, term: term}, (videos) => {
       this.setState({ 
+        play: false,
         videos: videos,
         selectedVideo: videos[0]
        });
@@ -40,9 +42,9 @@ class App extends Component {
     return(
       <div>
       <SearchBar onSearchTermChange ={videoSearch}/>
-      <VideoDetail video={this.state.selectedVideo}/>
+      <VideoDetail video={this.state.selectedVideo}  autoplay={this.state.play}/>
       <VideoList 
-        onVideoSelect={selectedVideo => this.setState({selectedVideo})} 
+        onVideoSelect={selectedVideo => this.setState({play: true, selectedVideo})} 
         videos={this.state.videos} />
      </div> 
     ); 
