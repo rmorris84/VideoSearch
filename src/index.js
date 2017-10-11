@@ -54,4 +54,3 @@ class App extends Component {
 
 //Render to DOM
 ReactDOM.render(<App />, document.querySelector('.container'));
-
